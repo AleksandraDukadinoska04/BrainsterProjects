@@ -1,0 +1,123 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.filters{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    @include mix.tablet-styles{
+        flex-wrap: wrap;
+    }
+
+    .inner{
+        flex-basis: 33.33%;
+        padding: (var.$gutter-base * 4) 0;
+        background-color:  var.$background-color-primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        height: 100px;
+
+        &:hover{
+            background-color: var.$background-color-secondary ;
+        }
+        &:hover label{
+            color: var.$background-color-primary;
+        }
+        &:hover i{
+            display: block;
+        }
+
+
+        @include mix.tablet-styles{
+            flex-basis: 100%;
+            justify-content: flex-start;
+            padding: var.$gutter-base * 4;
+            min-height: 50px;
+        }
+
+        @include mix.mobile-l-styles{
+            padding: var.$gutter-base * 2;
+         }
+
+        &:not(:last-child){
+            border-right: 2px solid rgba(81, 79, 79, 0.517);
+
+            @include mix.tablet-styles{
+               border-right: 0;
+               border-bottom: 2px solid rgba(81, 79, 79, 0.517);
+            }
+        }
+    }
+
+    
+
+    .fa-check{
+        color: var.$background-color-secondary;
+        background-color: var.$background-color-primary;
+        border-radius: 50%;
+        padding: (var.$gutter-base * 1.5) (var.$gutter-base * 2);
+        font-size: 25px;
+        display: none;
+        z-index: 2;
+
+        @include mix.tablet-styles{
+            font-size: 20px;
+         }
+    }
+
+  
+
+    input[type="checkbox"]{
+        appearance: none;
+
+    }
+
+
+    label{
+        flex-basis: 70%;
+        color: var.$text-color-primary;
+        font-size: 17px; 
+        cursor: pointer;
+        margin-right: var.$gutter-base * 2;
+        font-weight: bold;
+        z-index: 2;
+
+        @include mix.tablet-styles{
+            flex-basis: 80%;
+            margin-right: var.$gutter-base * 6;
+        }
+    }
+
+  
+ 
+    input[type="checkbox"]:checked~i{
+        display: block;
+    }
+
+    input[type="checkbox"]:checked+label{
+        color: var.$background-color-primary;
+        
+        
+        
+    }
+
+    input[type="checkbox"]:checked~.overlay{
+        display: block;
+    }
+
+    .overlay{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var.$background-color-secondary;
+        display: none;
+    }
+
+   
+}
