@@ -13,9 +13,13 @@
     />
     <link rel="stylesheet" href="./css/main.css" />
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-    />
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+  />
   </head>
 
   <body>
@@ -69,7 +73,7 @@
         </div>
       </nav>
     </header>
-    
+
 
     <!-- Banner -->
      <div class="banner">
@@ -114,6 +118,38 @@
       </div>
     </div>
 
+    <!-- Fillters -->
+      <div class="filters">
+        <div class="inner">
+          <input type="checkbox" id="filter-marketing" />
+          <label for="filter-marketing"
+            >Проекти на студентите по академијата за маркетинг</label
+          >
+          <i class="fa-solid fa-check"></i>
+          <div class="overlay"></div>
+        </div>
+  
+        <div class="inner">
+          <input type="checkbox" id="filter-coding" />
+          <label for="filter-coding"
+            >Проекти на студентите по академијата за програмирање</label
+          >
+  
+          <i class="fa-solid fa-check"></i>
+          <div class="overlay"></div>
+        </div>
+  
+        <div class="inner">
+          <input type="checkbox" id="filter-design" />
+          <label for="filter-design"
+            >Проекти на студентите по академијата за дизајн</label
+          >
+  
+          <i class="fa-solid fa-check"></i>
+          <div class="overlay"></div>
+        </div>
+      </div>
+
     <!-- Responsive Navbar -->
     <script>
       const hamburger = document.querySelector(".hamburger");
@@ -130,6 +166,83 @@
           navMenu.classList.remove("active");
         })
       );
+    </script>
+
+    <!-- JS Fillters -->
+    <script>
+  document
+    .querySelector("#filter-coding")
+    .addEventListener("change", filterCoding);
+  document
+    .querySelector("#filter-design")
+    .addEventListener("change", filterDesign);
+  document
+    .querySelector("#filter-marketing")
+    .addEventListener("change", filterMarketing);
+
+  function filterCoding() {
+    hideAllCards();
+
+    if (document.querySelector("#filter-coding").checked) {
+      var codingCards = document.querySelectorAll(".coding");
+      codingCards.forEach((codingCard) => {
+        codingCard.style.display = "inline-block";
+      });
+
+      document.querySelector("#filter-design").checked = false;
+      document.querySelector("#filter-marketing").checked = false;
+    } else {
+      showAllCards();
+    }
+  }
+
+  function filterDesign() {
+    hideAllCards();
+
+    if (document.querySelector("#filter-design").checked) {
+      var designCards = document.querySelectorAll(".design");
+      designCards.forEach((designCard) => {
+        designCard.style.display = "inline-block";
+      });
+
+      document.querySelector("#filter-coding").checked = false;
+      document.querySelector("#filter-marketing").checked = false;
+    } else {
+      showAllCards();
+    }
+  }
+
+  function filterMarketing() {
+    hideAllCards();
+
+    if (document.querySelector("#filter-marketing").checked) {
+      var marketingCards = document.querySelectorAll(".marketing");
+      marketingCards.forEach((marketingCard) => {
+        marketingCard.style.display = "inline-block";
+      });
+
+      document.querySelector("#filter-design").checked = false;
+      document.querySelector("#filter-coding").checked = false;
+    } else {
+      showAllCards();
+    }
+  }
+
+  function hideAllCards() {
+    var allCards = document.querySelectorAll(".card");
+
+    allCards.forEach((card) => {
+      card.style.display = "none";
+    });
+  }
+
+  function showAllCards() {
+    var allCards = document.querySelectorAll(".card");
+
+    allCards.forEach((card) => {
+      card.style.display = "inline-block";
+    });
+  }
     </script>
 
     <!-- Bootstrap JavaScript Libraries -->
