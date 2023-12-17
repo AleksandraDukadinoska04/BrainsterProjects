@@ -450,4 +450,120 @@ header .navbar .hamburger .three {
   bottom: 0;
   background-color: #EB3B3B;
   display: none;
+}
+
+.container_projects {
+  background-color: #FCD232;
+  padding: 1.875rem 0;
+}
+@media (max-width: 426px) {
+  .container_projects {
+    padding: 1.875rem;
+  }
+}
+.container_projects h2 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 1.875rem;
+  font-weight: bold;
+}
+@media (max-width: 426px) {
+  .container_projects h2 {
+    text-align: left;
+  }
+}
+.container_projects .cards {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-wrap: wrap;
+  margin: 0px auto 3.125rem auto;
+  width: 70%;
+}
+@media (max-width: 769px) {
+  .container_projects .cards {
+    width: 85%;
+  }
+}
+@media (max-width: 426px) {
+  .container_projects .cards {
+    justify-content: center;
+    width: 100%;
+  }
+}
+.container_projects .cards .card {
+  flex-basis: 30%;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 0 20px rgba(50, 50, 50, 0.3);
+  cursor: pointer;
+  transition: 1s;
+}
+@media (max-width: 769px) {
+  .container_projects .cards .card {
+    flex-basis: 46%;
+  }
+}
+@media (max-width: 426px) {
+  .container_projects .cards .card {
+    flex-basis: 100%;
+  }
+}
+.container_projects .cards .card:not(:last-child) {
+  margin-right: 1.25rem;
+}
+@media (max-width: 426px) {
+  .container_projects .cards .card:not(:last-child) {
+    margin-right: 0;
+  }
+}
+.container_projects .cards .card:hover {
+  transform: scale(1.03);
+  z-index: 2;
+}
+.container_projects .cards .card .image img {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.container_projects .cards .card .text {
+  padding: 0.9375rem 0.625rem;
+  position: relative;
+}
+.container_projects .cards .card .text p {
+  font-size: 15px;
+}
+.container_projects .cards .card .text span {
+  background-color: #FCD232;
+  padding: 0.3125rem;
+  font-weight: bold;
+  font-size: small;
+}
+.container_projects .cards .card .text h3 {
+  width: 90%;
+  margin-top: 0.625rem;
+  font-size: 20px;
+  font-weight: bold;
+}
+.container_projects .cards .card .text a {
+  text-decoration: none;
+  color: white;
+  background-color: #FD1201;
+  border-radius: 5px;
+  padding: 0.46875rem 1.25rem;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  font-weight: bold;
+  font-size: small;
+}
+.container_projects .cards .card .text a:hover {
+  border: 2px solid #FD1201;
+  color: #FD1201;
+  background-color: transparent;
+}
+.container_projects .cards .card .text .data {
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 3.125rem;
 }/*# sourceMappingURL=main.css.map */
