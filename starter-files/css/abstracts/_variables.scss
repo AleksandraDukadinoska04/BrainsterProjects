@@ -1,0 +1,29 @@
+@use 'sass:math';
+
+@function rem-calc($size) {
+  @return (math.div($size, 16)) * 1rem;
+}
+
+// Font settings
+$font-family-base:           'Open Sans', sans-serif;
+
+$line-height-base:           1.5;
+
+$font-weight-normal:         400;
+$font-weight-bold:           700;
+
+// Size settings
+$gutter-base:                rem-calc(5);
+
+// Color settings
+$text-color-base:            black;
+$text-color-primary:         white;
+$text-color-hover:           #FD1201;
+
+$background-color-base:      #FCD232;
+$background-color-primary:   #302F37;
+$background-color-secondary: #EB3B3B;
+$background-color-btn:       #FD1201;
+
+
+
