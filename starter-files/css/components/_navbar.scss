@@ -1,0 +1,215 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use 'sass:math';
+
+
+header{
+    background-color: var.$background-color-base;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.086);
+
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: (var.$gutter-base * 3) (var.$gutter-base * 10);
+        position: fixed;
+        background-color: var.$background-color-base;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.086);
+        width: 100%;
+        z-index: 3;
+
+        @include mix.tablet-styles{
+            padding:(var.$gutter-base * 3) (var.$gutter-base * 4);
+        }
+
+        .logo{
+            width: 50px;
+            
+
+            @include mix.mobile-l-styles{
+                width: 10%;
+            }
+        }
+
+    
+        .nav-menu{
+            display: flex ;
+            justify-content:end;
+            align-items: center;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
+            flex-basis: 80%;
+            text-align: center;
+
+           
+            li{
+                list-style: none;
+            }
+
+           
+
+            .nav-item{
+                &:last-child{
+                    margin-right: var.$gutter-base * 6;
+                }
+        
+
+                @include mix.tablet-styles{
+                    margin: (var.$gutter-base * 3) 0; 
+                }
+
+                .nav-link {
+                    position: relative;
+                    color: var.$text-color-base;
+                    font-weight: bold;
+                    text-decoration: none;
+
+                    &:nth-child(4){
+                        margin-right: var.$gutter-base * 4 ;
+                    }
+                    
+                
+                    &::after{
+                        content: "";
+                        width: 0 ;
+                        height: 3px;
+                        position: absolute;
+                        bottom: -3px;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        background-color: var.$text-color-hover;
+                        transition: width 0.5s ;
+                    
+                    }
+                    &:hover{
+                        color: var.$text-color-hover;
+                    }
+                    &:hover::after{
+                        width: 100% ;
+                    }
+
+                    @include mix.tablet-styles{ 
+                        color: var.$text-color-primary;
+                    }
+                
+                }
+
+            }
+            .button{
+                background-color: var.$background-color-btn;
+                color: var.$text-color-primary;
+                font-weight: bold;
+                text-decoration: none;
+                padding: (var.$gutter-base * 2) (var.$gutter-base * 3);
+                border-radius: 5px;
+                font-size: 14px;
+            
+                &:hover{
+                    box-shadow: 0 0 20px rgba(0, 0, 0, 0.302);
+                    transform: scale(1.02);
+                    transition: 0.5s;
+                }
+    
+               
+            }
+
+
+            @include mix.tablet-styles{
+            
+                position: fixed;
+                left: 0;
+                top: -100%;
+                gap: 0;
+                flex-direction: column;
+                justify-content: flex-start;
+                width: 100%;
+                height: 100vh;
+                background-color: var.$background-color-primary;
+                align-items: flex-start;
+                transition: 0.3s;
+                padding: (var.$gutter-base * 16) (var.$gutter-base * 4);
+                
+                &.active{
+                    top: 0;
+                }
+            
+            }
+            
+        }
+
+           
+       
+
+       
+
+        .hamburger{
+            display: none;
+            cursor: pointer;
+            z-index: 4;
+            text-align: right;
+        
+            .bar{
+                display: block;
+                height: 3px;
+                margin: var.$gutter-base 0 var.$gutter-base auto;
+                -webkit-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                background-color: var.$text-color-base;
+                border-radius: 5px;
+                
+            }
+        
+            .one{
+                width: 30px;
+            }
+            .two{
+                width: 20px;
+            }
+            .three{
+                width: 10px ;
+            }
+
+            
+            @include mix.tablet-styles{
+                display: block;
+                z-index: 3;  
+                
+
+                &.active .bar:nth-child(2){
+                    opacity: 0;
+                }
+
+                &.active .bar:nth-child(1){
+                    transform:translateY(8px) rotate(45deg) ;
+                    background-color: var.$text-color-primary;
+                }
+
+                &.active .bar:nth-child(3){
+                    transform:translateY(-8px) rotate(-45deg) ;
+                    width: 30px;
+                    background-color: var.$text-color-primary;
+                }
+
+            }
+           
+            
+
+            
+          
+        }
+        
+    
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
