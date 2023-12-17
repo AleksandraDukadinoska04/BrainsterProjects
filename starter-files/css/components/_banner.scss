@@ -1,0 +1,218 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+.banner{
+    position: relative;
+    min-height: 88vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../../Design/Brainster\ Background\ 3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: var.$gutter-base * 16;
+
+    @include mix.tablet-styles{
+        padding-top: var.$gutter-base * 12;
+    }
+
+    @include mix.mobile-l-styles{
+        padding-top: var.$gutter-base * 8;
+    }
+
+
+   
+
+    .inner{
+        flex-basis: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        h2{
+            font-size: 80px;
+            margin: var.$gutter-base * 2;
+            color: transparent;
+            -webkit-text-stroke: 1px var.$background-color-base;
+            background: url(../../../Design/pattern.png);
+            -webkit-background-clip: text;
+            background-position: 0 0;
+            animation: back 20s linear infinite;
+    
+    
+            @include mix.tablet-styles{
+                font-size: 50px;
+            }
+        }
+    
+        @keyframes back{
+            100%{
+                background-position: 2000px 0;
+            }
+        }
+        img{
+            width: 20%;
+            z-index: 2;
+            
+    
+            @include mix.tablet-styles{
+                width: 40%;
+            }
+    
+        }
+    }
+
+    .wrapper{
+        height: 400px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: start;
+        flex-direction: column;
+
+
+        @include mix.mobile-l-styles{
+            display: none;
+        }
+
+
+
+        .label{
+            width: 80px;
+            background-size: cover;
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 50px;
+            margin: var.$gutter-base * 2;
+            display: flex;
+            align-items: flex-end;
+            transition:.6s cubic-bezier(.28, -0.03,0,.99) ;
+            box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+            border: 3px dotted var.$background-color-base;
+
+            &:hover{
+                border: 3px dotted var.$text-color-hover;
+            }
+
+           
+
+            .crd{
+                display: flex;
+                flex-wrap: nowrap;
+
+                .description{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    height: 80px;
+                    width: 520px;
+                    opacity: 0;
+                    transform: translateX(30px);
+                    transition-delay: .3s;
+                    transition: all .3s ease;
+
+                    @include mix.tablet-styles{
+                        width: 300px;
+                    }
+
+                    a{
+                        text-transform: uppercase;
+                        color: var.$background-color-base;
+                        text-decoration: none;
+                        font-size: 20px;
+
+                        @include mix.tablet-styles{
+                           font-size: 15px;
+                        }
+
+                        h4{
+                            margin: 0;
+                            position: relative;
+
+                            &::after{
+                                content: "";
+                                width: 0 ;
+                                height: 3px;
+                                position: absolute;
+                                bottom: -3px;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                background-color: var.$text-color-hover;
+                                transition: width 0.5s ;
+                            
+                            }
+                            &:hover{
+                                color: var.$text-color-hover;
+                            }
+                           
+                            &:hover::after{
+                                width: 110% ;
+                            }
+                        
+
+                        }
+                        
+                    }
+                    
+                }
+                
+               
+            }
+        
+        }
+        .label[for="c1"]{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../../Design/marketing.jpg);
+            background-position: center;
+        }
+        .label[for="c2"]{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../../Design/coding.jpg);
+            background-position: center;
+        }
+        .label[for="c3"]{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../../Design/data-science.jpg);
+            background-position: center;
+        }
+        .label[for="c4"]{
+            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../../../Design/design.jpg);
+            background-position: center;
+        }
+
+        input{
+            display: none;
+
+            &:checked + label{
+                width: 500px; 
+                
+                @include mix.tablet-styles{
+                    width: 300px;
+                }
+                
+            }
+            &:checked + label .description{
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+                
+            }
+        }
+        
+    }
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
