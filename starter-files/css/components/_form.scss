@@ -1,0 +1,141 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use 'sass:math';
+
+.container_form{
+    background-color:  var.$background-color-base;
+    padding-top: var.$gutter-base * 30 ;
+    padding-bottom: var.$gutter-base * 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+
+   
+    @include mix.tablet-styles{
+        padding-top: var.$gutter-base * 30 ;
+        padding-bottom: var.$gutter-base * 40;
+    }
+    @include mix.mobile-l-styles{
+        padding-top: var.$gutter-base * 20;
+        padding-bottom: var.$gutter-base * 10;
+    }
+    
+    h1{
+        text-align: center;
+        font-weight: bold;
+        font-size: 50px;
+        margin-bottom: var.$gutter-base * 20;
+
+        @include mix.mobile-l-styles{
+            font-size: 35px;
+            margin-bottom: var.$gutter-base * 6;
+        }
+    }
+
+    form{
+       
+        width: 70%;
+        @include mix.mobile-l-styles{
+            width: 95%;
+        }
+        @include mix.tablet-styles{
+            width: 90%;
+        }
+
+        .valid-feedback, .invalid-feedback{
+            font-style: italic;
+        }
+    }
+
+    
+    .form-control{
+        width: 100%;
+        border-radius: 5px;
+        border: 0;
+        padding: (var.$gutter-base * 2.5) (var.$gutter-base * 3);
+        outline: 0;
+
+      
+
+        &::-webkit-input-placeholder{
+            font-style: italic;
+            font-size: 14px;
+        }
+
+        &:hover{
+          box-shadow: 0 0 20px lightblue;
+        }
+    }
+
+    .form-label{
+        font-weight: bold;
+        margin-bottom: var.$gutter-base;
+    }
+  
+    .btn{
+        background-color: var.$background-color-btn;
+        color: var.$text-color-primary;
+        width: 100%;
+        font-weight: bold;
+        padding: (var.$gutter-base * 2) (var.$gutter-base * 3);
+        margin-top: var.$gutter-base * 6;
+
+        &:hover{
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.302);
+            transform: scale(1.02);
+            transition: 0.5s;
+        }
+
+       
+
+        @include mix.mobile-l-styles{
+            margin-top: var.$gutter-base * 35;
+        }
+    }
+    .was-validated{
+        .btn{
+            margin-top: var.$gutter-base * 5.5;
+            
+            @include mix.mobile-l-styles{
+                margin-top: var.$gutter-base * 35;
+            }
+        }
+
+    }
+
+    select{
+        width: 100%;
+        border-radius: 5px;
+        border: 0;
+        padding:(var.$gutter-base * 2.5) (var.$gutter-base * 3);
+        font-weight: bold;
+        appearance: none;
+        font-size: 14px;
+
+
+        &:hover, &:focus{
+            box-shadow: 0 0 20px lightblue;
+        }
+        
+
+        option{
+            font-weight: bold;
+            margin-bottom: var.$gutter-base * 2;
+            border-radius: 5px;
+
+            &:hover{
+              background-color: lightgrey;
+            }
+
+            
+
+            &:not(:last-child){
+                border-bottom: 1px solid gray;
+            }
+        }
+    }
+
+}
+

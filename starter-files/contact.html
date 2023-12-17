@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Brainster Labs - Contact</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <a href="./index.html" class="logo"
+          ><img src="../Design/logo (2).png" alt="Brainster Logo"
+        /></a>
+
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a
+              href="https://brainster.co/marketing/"
+              class="nav-link"
+              target="_blank"
+              >Академија за маркетинг</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://brainster.co/full-stack/"
+              class="nav-link"
+              target="_blank"
+              >Академија за програмирање</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://brainster.co/data-science/"
+              class="nav-link"
+              target="_blank"
+              >Академија за data science</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              href="https://brainster.co/graphic-design/"
+              class="nav-link"
+              target="_blank"
+              >Академија за дизајн</a
+            >
+          </li>
+          <a href="contact.html" class="button">Вработи наш студент</a>
+        </ul>
+
+        <div class="hamburger">
+          <span class="bar one"></span>
+          <span class="bar two"></span>
+          <span class="bar three"></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Form -->
+    <div class="container_form">
+      <h1>Вработи студенти</h1>
+      <form
+        class="row g-4 needs-validation"
+        novalidate
+        action="./form.php"
+        method="POST"
+      >
+        <div class="col-12 col-md-6">
+          <label for="name" class="form-label">Име и презиме</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            value=""
+            required
+            placeholder="Вашето име и презиме"
+          />
+          <div class="valid-feedback">Одлично!</div>
+          <div class="invalid-feedback">
+            Ве молиме внесето го нашето име и презиме!
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <label for="company" class="form-label">Име на компанија</label>
+          <input
+            type="text"
+            class="form-control"
+            name="company"
+            id="company"
+            value=""
+            required
+            placeholder="Име на вашата компанија"
+          />
+          <div class="valid-feedback">Одлично!</div>
+          <div class="invalid-feedback">
+            Ве молиме внесето го името на вашата компанија!
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <label for="email" class="form-label">Контакт имејл</label>
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            id="email"
+            value=""
+            required
+            placeholder="Контакт имејл на вашата компанија"
+          />
+          <div class="valid-feedback">Одлично!</div>
+          <div class="invalid-feedback">Ве молиме внесете валиден имејл!</div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <label for="phone" class="form-label">Контакт телефон</label>
+          <input
+            type="tel"
+            class="form-control"
+            name="phone"
+            id="phone"
+            value=""
+            required
+            placeholder="Контакт телефон на вашата компанија"
+          />
+          <div class="valid-feedback">Одлично!</div>
+          <div class="invalid-feedback">Ве молиме внесете валиден број!</div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <label for="student-type" class="form-label">Тип на студенти</label>
+          <select
+            class="form-select"
+            name="student-type"
+            id="student-type"
+            required
+          >
+            <option selected disabled hidden value="">
+              Изберете тип на студент
+            </option>
+            <option value="marketing">Студенти од маркетинг</option>
+            <option value="coding">Студенти од програмирање</option>
+            <option value="data-science">Студенти од data science</option>
+            <option value="design">Студенти од дизајн</option>
+          </select>
+          <div class="invalid-feedback">Ве молиме изберете тип на студент!</div>
+          <div class="valid-feedback">Одлично!</div>
+        </div>
+
+        <div class="col-12 col-md-6">
+          <button class="btn" type="submit">ИСПРАТИ</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Изработено со ❤️ од студентите на Brainster</p>
+    </footer>
+
+    <!-- Responsive Navbar -->
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
+    </script>
+
+    <!-- Form Validation -->
+    <script>
+      (() => {
+        "use strict";
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll(".needs-validation");
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

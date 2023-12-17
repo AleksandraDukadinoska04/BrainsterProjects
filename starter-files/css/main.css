@@ -584,4 +584,123 @@ footer p {
   footer p {
     font-size: 13px;
   }
+}
+
+.container_form {
+  background-color: #FCD232;
+  padding-top: 9.375rem;
+  padding-bottom: 12.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (max-width: 769px) {
+  .container_form {
+    padding-top: 9.375rem;
+    padding-bottom: 12.5rem;
+  }
+}
+@media (max-width: 426px) {
+  .container_form {
+    padding-top: 6.25rem;
+    padding-bottom: 3.125rem;
+  }
+}
+.container_form h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 50px;
+  margin-bottom: 6.25rem;
+}
+@media (max-width: 426px) {
+  .container_form h1 {
+    font-size: 35px;
+    margin-bottom: 1.875rem;
+  }
+}
+.container_form form {
+  width: 70%;
+}
+@media (max-width: 426px) {
+  .container_form form {
+    width: 95%;
+  }
+}
+@media (max-width: 769px) {
+  .container_form form {
+    width: 90%;
+  }
+}
+.container_form form .valid-feedback, .container_form form .invalid-feedback {
+  font-style: italic;
+}
+.container_form .form-control {
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+  padding: 0.78125rem 0.9375rem;
+  outline: 0;
+}
+.container_form .form-control::-webkit-input-placeholder {
+  font-style: italic;
+  font-size: 14px;
+}
+.container_form .form-control:hover {
+  box-shadow: 0 0 20px lightblue;
+}
+.container_form .form-label {
+  font-weight: bold;
+  margin-bottom: 0.3125rem;
+}
+.container_form .btn {
+  background-color: #FD1201;
+  color: white;
+  width: 100%;
+  font-weight: bold;
+  padding: 0.625rem 0.9375rem;
+  margin-top: 1.875rem;
+}
+.container_form .btn:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.302);
+  transform: scale(1.02);
+  transition: 0.5s;
+}
+@media (max-width: 426px) {
+  .container_form .btn {
+    margin-top: 10.9375rem;
+  }
+}
+.container_form .was-validated .btn {
+  margin-top: 1.71875rem;
+}
+@media (max-width: 426px) {
+  .container_form .was-validated .btn {
+    margin-top: 10.9375rem;
+  }
+}
+.container_form select {
+  width: 100%;
+  border-radius: 5px;
+  border: 0;
+  padding: 0.78125rem 0.9375rem;
+  font-weight: bold;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font-size: 14px;
+}
+.container_form select:hover, .container_form select:focus {
+  box-shadow: 0 0 20px lightblue;
+}
+.container_form select option {
+  font-weight: bold;
+  margin-bottom: 0.625rem;
+  border-radius: 5px;
+}
+.container_form select option:hover {
+  background-color: lightgrey;
+}
+.container_form select option:not(:last-child) {
+  border-bottom: 1px solid gray;
 }/*# sourceMappingURL=main.css.map */
