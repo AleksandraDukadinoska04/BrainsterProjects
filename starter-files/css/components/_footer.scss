@@ -1,0 +1,21 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+footer{
+    background-color:var.$background-color-primary;
+    color: var.$text-color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: (var.$gutter-base * 3) 0;
+
+    p{
+        margin: 0;
+        font-weight: bold;
+        
+        @include mix.mobile-l-styles{
+            font-size: 13px;
+        }
+    }
+}
