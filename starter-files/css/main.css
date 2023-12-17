@@ -566,4 +566,22 @@ header .navbar .hamburger .three {
   font-size: 13px;
   font-weight: bold;
   margin-bottom: 3.125rem;
+}
+
+footer {
+  background-color: #302F37;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9375rem 0;
+}
+footer p {
+  margin: 0;
+  font-weight: bold;
+}
+@media (max-width: 426px) {
+  footer p {
+    font-size: 13px;
+  }
 }/*# sourceMappingURL=main.css.map */
