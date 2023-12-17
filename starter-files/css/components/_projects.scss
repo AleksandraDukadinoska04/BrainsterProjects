@@ -1,0 +1,140 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+@use "sass:math";
+
+
+.container_projects{
+    background-color: var.$background-color-base;
+    padding: (var.$gutter-base * 6) 0;
+
+    @include mix.mobile-l-styles{
+        padding: var.$gutter-base * 6;
+    }
+
+
+    h2{
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: var.$gutter-base * 6;
+        font-weight: bold;
+
+        @include mix.mobile-l-styles{
+            text-align: left;
+        }
+    }
+    
+    .cards{
+        display: flex;
+        align-items:center;
+        justify-content: start;
+        flex-wrap: wrap;
+        margin: 0px auto (var.$gutter-base * 10) auto;
+        width: 70%;
+
+        @include mix.tablet-styles{
+          
+            width: 85%;
+        }
+
+
+        @include mix.mobile-l-styles{
+            justify-content: center;
+            width: 100%;
+        }
+
+
+       
+
+        .card{
+            flex-basis: 30%;
+            border-radius: 10px;
+            background-color: var.$text-color-primary;
+            margin-bottom: var.$gutter-base * 4;
+            box-shadow: 0 0 20px rgba(50, 50, 50, .3); 
+            cursor: pointer;
+            transition: 1s;
+            
+
+            
+            @include mix.tablet-styles{
+                flex-basis: 46%;
+            }
+            @include mix.mobile-l-styles{
+                flex-basis: 100%;
+            }
+
+            &:not(:last-child){
+                margin-right: var.$gutter-base * 4;
+                @include mix.mobile-l-styles{
+                    margin-right: 0;
+                }
+            }
+
+            &:hover{
+                transform: scale(1.03);
+                z-index: 2;
+                // transform: translateY(-10px);
+            }
+
+            .image{
+                img{
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                   
+        
+                }
+            }
+
+            
+
+            .text{
+                padding: (var.$gutter-base * 3) (var.$gutter-base * 2);
+                position: relative;
+
+                p{
+                    font-size: 15px;
+                }
+
+                span{
+                    background-color: var.$background-color-base;
+                    padding: var.$gutter-base;
+                    font-weight: bold;
+                    font-size: small;
+                   
+                }
+
+                h3{
+                    width: 90%;
+                    margin-top: var.$gutter-base * 2;
+                    font-size: 20px;
+                    font-weight: bold;
+                }
+
+                a{
+                    text-decoration: none;
+                    color: var.$text-color-primary;
+                    background-color: var.$background-color-btn;
+                    border-radius: 5px;
+                    padding: (var.$gutter-base * 1.5) (var.$gutter-base * 4);
+                    position: absolute;
+                    right: 10px;
+                    bottom: 10px;
+                    font-weight: bold;
+                    font-size: small;
+                    
+                }
+                a:hover{
+                    border: 2px solid var.$background-color-btn;
+                    color: var.$background-color-btn;
+                    background-color: transparent;
+                }
+                .data{
+                    font-size: 13px;
+                    font-weight: bold;
+                    margin-bottom: var.$gutter-base * 10;
+                }
+            }
+        }
+    }
+}
+
