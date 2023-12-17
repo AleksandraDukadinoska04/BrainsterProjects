@@ -346,4 +346,108 @@ header .navbar .hamburger .three {
 .banner .wrapper input:checked + label .description {
   opacity: 1 !important;
   transform: translateY(0) !important;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+@media (max-width: 769px) {
+  .filters {
+    flex-wrap: wrap;
+  }
+}
+.filters .inner {
+  flex-basis: 33.33%;
+  padding: 1.25rem 0;
+  background-color: #302F37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100px;
+}
+.filters .inner:hover {
+  background-color: #EB3B3B;
+}
+.filters .inner:hover label {
+  color: #302F37;
+}
+.filters .inner:hover i {
+  display: block;
+}
+@media (max-width: 769px) {
+  .filters .inner {
+    flex-basis: 100%;
+    justify-content: flex-start;
+    padding: 1.25rem;
+    min-height: 50px;
+  }
+}
+@media (max-width: 426px) {
+  .filters .inner {
+    padding: 0.625rem;
+  }
+}
+.filters .inner:not(:last-child) {
+  border-right: 2px solid rgba(81, 79, 79, 0.517);
+}
+@media (max-width: 769px) {
+  .filters .inner:not(:last-child) {
+    border-right: 0;
+    border-bottom: 2px solid rgba(81, 79, 79, 0.517);
+  }
+}
+.filters .fa-check {
+  color: #EB3B3B;
+  background-color: #302F37;
+  border-radius: 50%;
+  padding: 0.46875rem 0.625rem;
+  font-size: 25px;
+  display: none;
+  z-index: 2;
+}
+@media (max-width: 769px) {
+  .filters .fa-check {
+    font-size: 20px;
+  }
+}
+.filters input[type=checkbox] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.filters label {
+  flex-basis: 70%;
+  color: white;
+  font-size: 17px;
+  cursor: pointer;
+  margin-right: 0.625rem;
+  font-weight: bold;
+  z-index: 2;
+}
+@media (max-width: 769px) {
+  .filters label {
+    flex-basis: 80%;
+    margin-right: 1.875rem;
+  }
+}
+.filters input[type=checkbox]:checked ~ i {
+  display: block;
+}
+.filters input[type=checkbox]:checked + label {
+  color: #302F37;
+}
+.filters input[type=checkbox]:checked ~ .overlay {
+  display: block;
+}
+.filters .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #EB3B3B;
+  display: none;
 }/*# sourceMappingURL=main.css.map */
