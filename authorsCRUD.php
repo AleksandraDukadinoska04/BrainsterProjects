@@ -112,7 +112,7 @@ $authors = $connObj->selectAll($query, [':is_deleted' => 0]);
                 <div class="col-md-6 col-12">
                     <div class="">
                         <label for="firstname" class="labels">Firstname</label>
-                        <input type="text" name="firstname" required id="firstname" class="form-control" placeholder="Enter author's firstname..." value="<?= isset($author) ? $author['firstname'] : '' ?>" />
+                        <input type="text" required name="firstname" id="firstname" class="form-control" placeholder="Enter author's firstname..." value="<?= isset($author) ? $author['firstname'] : '' ?>" />
                         <span class="validations d-block fw-bold"><?= $errors['firstname'] ? $errors['firstname'] : ''; ?></span>
                     </div>
                 </div>

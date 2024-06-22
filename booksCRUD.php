@@ -119,14 +119,14 @@ $authors = $connObj->selectAll($query);
                 <div class="col-md-6 col-12">
                     <div class="">
                         <label for="title" class="form-label labels">Title</label>
-                        <input type="text" name="title" id="title" class="form-control" placeholder="Enter book title.." value="<?= isset($book) ? $book['title'] : '' ?>" />
+                        <input type="text" required name="title" id="title" class="form-control" placeholder="Enter book title.." value="<?= isset($book) ? $book['title'] : '' ?>" />
                         <span class="validations d-block fw-bold"><?= $errors['title'] ? $errors['title'] : ''; ?></span>
                     </div>
                 </div>
                 <div class="col-md-6 col-12">
                     <div class="">
                         <label for="author" class="form-label labels">Author</label>
-                        <select name="author" id="author" class="form-select">
+                        <select name="author" id="author" class="form-select" required>
                             <option value="" selected disabled>Choose author...</option>
                             <?php foreach ($authors as $author) { ?>
                                 <option value="<?= $author['id'] ?>" <?= isset($book) && $author['id'] === $book['author_id'] ? 'selected' : '' ?>><?= $author['name'] ?></option>
@@ -141,7 +141,7 @@ $authors = $connObj->selectAll($query);
                 <div class="col-md-6 col-12">
                     <div class="">
                         <label for="publicationYear" class="form-label labels">Publication year</label>
-                        <input type="number" name="publicationYear" id="publicationYear" class="form-control" placeholder="Enter publication year of the book.." value="<?= isset($book) ? $book['publication_year'] : '' ?>" />
+                        <input type="number" required name="publicationYear" id="publicationYear" class="form-control" placeholder="Enter publication year of the book.." value="<?= isset($book) ? $book['publication_year'] : '' ?>" />
 
                         <span class="validations d-block fw-bold"><?= $errors['publicationYear'] ? $errors['publicationYear'] : ''; ?></span>
 
@@ -151,7 +151,7 @@ $authors = $connObj->selectAll($query);
                 <div class="col-md-6 col-12">
                     <div class="">
                         <label for="numberOFpages" class="form-label labels">Number of pages</label>
-                        <input type="number" name="numberOFpages" id="numberOFpages" class="form-control" placeholder="Enter number of pages of the book.." value="<?= isset($book) ? $book['number_of_pages'] : '' ?>" />
+                        <input type="number" required name="numberOFpages" id="numberOFpages" class="form-control" placeholder="Enter number of pages of the book.." value="<?= isset($book) ? $book['number_of_pages'] : '' ?>" />
 
                         <span class="validations d-block fw-bold"><?= $errors['numberOFpages'] ? $errors['numberOFpages'] : ''; ?></span>
 
@@ -161,7 +161,7 @@ $authors = $connObj->selectAll($query);
                 <div class="col-md-6 col-12">
                     <div class="">
                         <label for="imageURL" class="form-label labels">Image URL</label>
-                        <input type="text" name="imageURL" id="imageURL" class="form-control" placeholder="Enter image URL for the book.." value="<?= isset($book) ? $book['image'] : '' ?>" />
+                        <input type="text" required name="imageURL" id="imageURL" class="form-control" placeholder="Enter image URL for the book.." value="<?= isset($book) ? $book['image'] : '' ?>" />
 
                         <span class="validations d-block fw-bold"><?= $errors['image'] ? $errors['image'] : ''; ?></span>
 
@@ -170,7 +170,7 @@ $authors = $connObj->selectAll($query);
                 <div class="col-md-6 col-12">
                     <div class="">
                         <label for="category" class="form-label labels">Category</label>
-                        <select name="category" id="category" class="form-select">
+                        <select name="category" id="category" class="form-select" required>
                             <option value="" selected disabled>Choose category...</option>
                             <?php foreach ($categories as $category) { ?>
                                 <option value="<?= $category['id'] ?>" <?= isset($book) && $category['id'] === $book['category_id'] ? 'selected' : '' ?>><?= $category['title'] ?></option>

@@ -5,12 +5,12 @@ $publicationYear = trim($_POST['publicationYear']);
 $image = trim($_POST['imageURL']);
 
 if (isset($_POST['author'])) {
-    $query = "SELECT * FROM author WHERE id = :author";
-    $author = $connObj->selectOne($query, ['author' => $_POST['author']]);
+    $query = "SELECT * FROM author WHERE id = :author AND is_deleted = :is_deleted";
+    $author = $connObj->selectOne($query, ['author' => $_POST['author'], 'is_deleted' => 0]);
 }
 if (isset($_POST['category'])) {
-    $query = "SELECT * FROM category WHERE id = :category";
-    $category = $connObj->selectOne($query, ['category' => $_POST['category']]);
+    $query = "SELECT * FROM category WHERE id = :category AND is_deleted = :is_deleted";
+    $category = $connObj->selectOne($query, ['category' => $_POST['category'], 'is_deleted' => 0]);
 }
 
 

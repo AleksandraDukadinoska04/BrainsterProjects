@@ -105,7 +105,7 @@ $categories = $connObj->selectAll($query, [':is_deleted' => 0]);
 
             <div class="category mx-auto">
                 <label for="title" class="labels">Title</label>
-                <input type="text" name="title" id="title" class="form-control" placeholder="Enter category's title..." value="<?= isset($category) ? $category['title'] : '' ?>" />
+                <input type="text" required name="title" id="title" class="form-control" placeholder="Enter category's title..." value="<?= isset($category) ? $category['title'] : '' ?>" />
                 <span class="validations d-block fw-bold"><?= $errors['title'] ? $errors['title'] : ''; ?></span>
                 <button type="submit" class="bn5 d-block ms-auto my-2"><?= isset($category) ? 'EDIT' : 'ADD' ?></button>
             </div>
