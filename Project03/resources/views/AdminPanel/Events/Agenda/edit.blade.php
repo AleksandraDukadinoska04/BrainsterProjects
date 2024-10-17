@@ -26,7 +26,7 @@
 
         <div class="coolinput">
             <label for="hour" class="text">Hour</label>
-            <input type="text" name="hour" id="hour" class="input" placeholder="Hour" value="{{ $agenda->hour }}">
+            <input type="time" name="hour" id="hour" class="input" placeholder="Hour" value="{{ $agenda->hour }}">
             <small id="hour-error" class="error-message text-danger fw-bold d-block"></small>
         </div>
 

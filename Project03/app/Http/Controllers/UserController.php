@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UserRequest;
 use App\Models\Recommendation;
 use App\Models\User;
-use App\Models\UsersActivityLog;
 use App\Models\Point;
 use App\Models\Badge;
 use App\Models\BroughtTicket;
@@ -70,8 +69,6 @@ class UserController extends Controller
 
         if ($request->hasFile('photo')) {
             $data['photo'] = $request->file('photo')->store('images', 'public');
-        } else {
-            $data['photo'] = 'images/default.jpg';
         }
 
         if ($request->hasFile('CV')) {
@@ -143,7 +140,7 @@ class UserController extends Controller
             'surname' => 'required|string|max:255',
             'bio' => 'nullable|string|max:1500',
             'profession' => 'required|string|max:255',
-            'phone' => 'nullable|integer',
+            'phone' => 'nullable',
             'city' => 'required|string|max:255',
             'country' => 'required|string|max:255',
             'photo' => 'nullable|image|mimes:jpeg,png,jpg|max:6144',
@@ -165,14 +162,11 @@ class UserController extends Controller
 
         if ($request->hasFile('photo')) {
             $data['photo'] = $request->file('photo')->store('images', 'public');
-        } else {
-            $data['photo'] = 'images/default.jpg';
         }
 
         if ($request->hasFile('CV')) {
             $data['CV'] = $request->file('CV')->store('cvs', 'public');
         }
-
 
         $user = User::find($id);
 
@@ -199,7 +193,9 @@ class UserController extends Controller
             'email' => $request->email,
         ];
 
-        $updateData['photo'] = $data['photo'];
+        if ($request->hasFile('photo')) {
+            $updateData['photo'] = $data['photo'];
+        }
 
         if ($request->CV !== null) {
             $updateData['CV'] = $data['CV'];
