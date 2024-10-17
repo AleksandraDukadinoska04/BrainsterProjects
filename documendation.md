@@ -1,4 +1,4 @@
----------VERSIONS----------
+----------VERSIONS----------
 
 Laravel Version: Laravel ^11.9
 PHP Version: 8.2.12
