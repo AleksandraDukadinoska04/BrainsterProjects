@@ -10,9 +10,12 @@ Git Version: 2.42.0.windows.2
 
 ---------SET UP THE PROJECT----------
 
-1.Clone the Project:
+0.Clone the Project:
 git clone (link of the cloned gitlab repository)
 cd (your folder)
+
+1.Change directory:
+cd Project03
 
 2.Install PHP dependencies using Composer:
 composer install
