@@ -100,7 +100,7 @@
     <div class="my-5">
         <div class="border-bottom pb-2 d-flex align-items-end">
             <h2 class="me-3 mb-0 color-gray gw-bold fst-italic">Speakers</h2>
-            <a href="{{ route('event.speaker.create', $event->id) }}" class=" btn-create fw-bold"><i class="fa-solid fa-plus me-1"></i>Add New Speaker</a>
+            <a href="{{ route('event.speaker.create', $event->id) }}" class=" btn-create"><i class="fa-solid fa-plus me-1"></i>Add New Speaker</a>
         </div>
 
 

@@ -1,5 +1,5 @@
-<table class="table table-hover mt-4">
-    <thead>
+<table class="table table-hover mt-4 shadow">
+    <thead class="table-warning">
         <tr>
             <th scope="col">#</th>
             <th scope="col">User</th>

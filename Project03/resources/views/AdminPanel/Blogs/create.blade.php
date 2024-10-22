@@ -64,7 +64,7 @@
 
         <div class="d-flex align-items-start justify-content-between">
             <div class="coolinput ">
-                <button type="button" id="addSection" class="btn-create my-auto fst-italic fw-bold"><i class="fa-solid fa-plus me-1 "></i>Add Section</button>
+                <button type="button" id="addSection" class="btn-create my-auto fst-italic "><i class="fa-solid fa-plus me-1 "></i>Add Section</button>
             </div>
 
             <div class="coolinput">

@@ -22,7 +22,7 @@
 
 
         <div class="coolinput mx-auto">
-            <button class="btn-create fst-italic fw-bold w-25" type="submit">Update</button>
+            <button class="btn-create fst-italic w-25" type="submit">Update</button>
         </div>
 
 

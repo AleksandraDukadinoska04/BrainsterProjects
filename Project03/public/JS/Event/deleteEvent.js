@@ -25,7 +25,9 @@ $(document).ready(function() {
                                 'Deleted!',
                                 response.message,
                                 'success'
-                            );
+                            ).then(() => {
+                                window.location.href = "/events"; 
+                            });
                          
                             $('#event-' + eventId).remove();
                         } else {

@@ -6,8 +6,8 @@
 
 
     <div class="head mx-auto mb-2">
-        <a href="{{ route('employees') }}" class="back mt-auto"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
-        <h1 class="text-secondary text-end fst-italic m-0 mt-auto">Create Employee</h1>
+        <a href="{{ route('employees') }}" class="back mt-auto w-25"><i class="fa-solid fa-arrow-left"></i> Go Back</a>
+        <h1 class="text-secondary text-end fst-italic m-0 mt-auto w-75">Create Employee</h1>
     </div>
     <hr>
 
